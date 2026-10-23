@@ -168,12 +168,27 @@
   .res-card{display:flex;gap:20px;align-items:flex-start;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:24px}
   .res-card .big{font-size:40px;line-height:44px;font-weight:700;color:var(--op-blue);min-width:96px}
 
-  /* Parts table */
-  .parts{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:14px;line-height:19.6px}
-  .parts th{background:var(--blue-100);color:var(--blue-900);text-align:left;font-weight:700;padding:12px 16px;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
-  .parts td{padding:14px 16px;border-top:1px solid var(--line);vertical-align:middle}
-  .parts .mpn{font-weight:700;color:var(--op-blue)}
-  .placeholder{color:var(--ink-3);font-style:normal;background:repeating-linear-gradient(45deg,var(--fill),var(--fill) 6px,#fff 6px,#fff 12px);padding:2px 8px;border-radius:3px;border:1px dashed var(--line);white-space:nowrap}
+  /* Parts: distributor inventory cards */
+  .inv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .inv-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:0 4px 16px rgba(24,50,78,.06)}
+  .inv-head{display:flex;gap:16px;align-items:flex-start}
+  .inv-head .chipico{width:56px;height:56px;flex:none}
+  .inv-head .mpn{font-size:24px;line-height:26.4px;font-weight:700;color:var(--ink);margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .inv-head .fam{font-size:11px;line-height:15px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--op-blue);background:var(--blue-100);border-radius:3px;padding:2px 6px}
+  .inv-head .desc{font-size:13px;line-height:18.2px;color:var(--ink-3);margin-top:4px}
+  .inv-card h4{font-size:18px;line-height:25.2px;color:var(--ink);margin:20px 0 4px;font-weight:700}
+  .inv{width:100%;border-collapse:collapse;font-size:13px;line-height:18.2px}
+  .inv th{text-align:left;font-weight:500;color:var(--ink-3);padding:10px 8px 8px 0;border-bottom:1px solid var(--line);font-size:12px}
+  .inv td{padding:10px 8px 10px 0;border-bottom:1px solid var(--fill);color:var(--ink);vertical-align:middle}
+  .inv td.stock{font-variant-numeric:tabular-nums}
+  .inv th:last-child,.inv td:last-child{text-align:right;padding-right:0}
+  .buy{display:inline-block;background:var(--orange);color:var(--white);font-weight:700;font-size:11px;line-height:15px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border-radius:var(--radius);padding:6px 12px;white-space:nowrap}
+  .buy:hover{background:#C95E0E}
+  .inv-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;font-size:12px;line-height:16.8px;color:var(--ink-3)}
+  .inv-foot a{font-weight:700;font-size:14px;color:var(--blue-600);text-decoration:none;white-space:nowrap}
+  .inv-foot a:hover{text-decoration:underline}
+  .inv-note{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:20px;font-size:12px;line-height:16.8px;color:var(--ink-3)}
+  .inv-note a{color:var(--blue-600);font-weight:700;text-decoration:none}
 
   /* Final CTA */
   .final{background:var(--blue-900);color:var(--white);padding:72px 0;position:relative;overflow:hidden}
@@ -202,6 +217,7 @@
     h1{font-size:40px;line-height:44px}
     .hero .wrap,.ba,.res,.final .wrap,.video-sec .wrap{grid-template-columns:1fr}
     .grid-3,.benefits,.steps{grid-template-columns:1fr 1fr}
+    .inv-grid{grid-template-columns:1fr}
     .proof .wrap{grid-template-columns:1fr 1fr}
     .stat{border-left:0;padding-left:0}
     .site-header .bar{padding:0 16px}
@@ -210,7 +226,8 @@
   @media (max-width:620px){
     h1{font-size:32px;line-height:35.2px}
     .grid-3,.benefits,.steps,.proof .wrap{grid-template-columns:1fr}
-    .parts .hide-sm{display:none}
+    .inv th:nth-child(3),.inv td:nth-child(3){display:none}
+    .inv-card{padding:18px}
   }
 </style>
 </head>
@@ -528,19 +545,87 @@
     <div class="wrap">
       <div class="section-head">
         <h2 id="parts-title">Compare GreenPAK Parts on Octopart</h2>
-        <p>Check stock and price across distributors before you design one in. Stock and price come from distributors and update on each part page.</p>
+        <p>See which distributors have each part in stock before you design one in. Stock comes from distributors and updates on each part page.</p>
       </div>
-      <table class="parts">
-        <thead><tr><th>MPN</th><th>Family</th><th class="hide-sm">Use It For</th><th class="hide-sm">Distributors in Stock</th><th></th></tr></thead>
-        <tbody>
-          <tr><td class="mpn">SLG47105</td><td>HVPAK</td><td class="hide-sm">Motor and load drive with a high-voltage H-bridge</td><td class="hide-sm"><span class="placeholder">live data</span></td><td><a class="btn btn-secondary btn-sm" data-track="part_SLG47105" href="https://octopart.com/search?q=SLG47105">Compare Stock</a></td></tr>
-          <tr><td class="mpn">SLG47011</td><td>AnalogPAK</td><td class="hide-sm">Low-power analog front end with a 14-bit SAR ADC and PGA</td><td class="hide-sm"><span class="placeholder">live data</span></td><td><a class="btn btn-secondary btn-sm" data-track="part_SLG47011" href="https://octopart.com/search?q=SLG47011">Compare Stock</a></td></tr>
-          <tr><td class="mpn">SLG47004</td><td>AnalogPAK</td><td class="hide-sm">Programmable analog system IC</td><td class="hide-sm"><span class="placeholder">live data</span></td><td><a class="btn btn-secondary btn-sm" data-track="part_SLG47004" href="https://octopart.com/search?q=SLG47004">Compare Stock</a></td></tr>
-          <tr><td class="mpn">SLG46537</td><td>GreenPAK</td><td class="hide-sm">General mixed-signal glue logic and control</td><td class="hide-sm"><span class="placeholder">live data</span></td><td><a class="btn btn-secondary btn-sm" data-track="part_SLG46537" href="https://octopart.com/search?q=SLG46537">Compare Stock</a></td></tr>
-          <tr><td class="mpn">SLG46536V</td><td>GreenPAK</td><td class="hide-sm">Sensor interfacing and counting, e.g. a speedometer</td><td class="hide-sm"><span class="placeholder">live data</span></td><td><a class="btn btn-secondary btn-sm" data-track="part_SLG46536V" href="https://octopart.com/search?q=SLG46536V">Compare Stock</a></td></tr>
-        </tbody>
-      </table>
-      <p class="src">Part list is a starting set for the mockup. Final list to be agreed with Renesas GreenPAK product marketing.</p>
+      <div class="inv-grid">
+        <article class="inv-card" aria-labelledby="mpn-SLG47105V">
+          <div class="inv-head">
+            <svg class="chipico" viewBox="0 0 56 56" aria-hidden="true"><g fill="#568FCA"><rect x="12" y="4" width="4" height="8" rx="1"/><rect x="20" y="4" width="4" height="8" rx="1"/><rect x="28" y="4" width="4" height="8" rx="1"/><rect x="36" y="4" width="4" height="8" rx="1"/><rect x="12" y="44" width="4" height="8" rx="1"/><rect x="20" y="44" width="4" height="8" rx="1"/><rect x="28" y="44" width="4" height="8" rx="1"/><rect x="36" y="44" width="4" height="8" rx="1"/><rect x="4" y="14" width="8" height="4" rx="1"/><rect x="4" y="22" width="8" height="4" rx="1"/><rect x="4" y="30" width="8" height="4" rx="1"/><rect x="4" y="38" width="8" height="4" rx="1"/><rect x="44" y="14" width="8" height="4" rx="1"/><rect x="44" y="22" width="8" height="4" rx="1"/><rect x="44" y="30" width="8" height="4" rx="1"/><rect x="44" y="38" width="8" height="4" rx="1"/></g><rect x="10" y="10" width="36" height="36" rx="5" fill="#285483"/><rect x="15" y="15" width="26" height="26" rx="3" fill="#3671B0"/><circle cx="20" cy="20" r="2" fill="#CEDEF0"/></svg>
+            <div>
+              <h3 class="mpn" id="mpn-SLG47105V">SLG47105V <span class="fam">HVPAK</span></h3>
+              <p class="desc">Programmable mixed-signal matrix with high-voltage features, 20-pin STQFN</p>
+            </div>
+          </div>
+          <h4>Distributor Inventory</h4>
+          <table class="inv">
+            <thead><tr><th scope="col">Distributor</th><th scope="col">Stock</th><th scope="col">Packaging</th><th scope="col">Min Qty</th><th scope="col"><span class="sr-only">Buy</span></th></tr></thead>
+            <tbody>
+              <tr><td>Verical</td><td class="stock">3,000</td><td>—</td><td>2</td><td><a class="buy" data-track="offer_click" data-mpn="SLG47105V" data-distributor="Verical" href="https://octopart.com/search?q=SLG47105V" aria-label="Buy SLG47105V from Verical">Buy Now</a></td></tr>
+              <tr><td>Mouser</td><td class="stock">2,985</td><td>Tape &amp; Reel</td><td>1</td><td><a class="buy" data-track="offer_click" data-mpn="SLG47105V" data-distributor="Mouser" href="https://octopart.com/search?q=SLG47105V" aria-label="Buy SLG47105V from Mouser">Buy Now</a></td></tr>
+              <tr><td>Renesas</td><td class="stock">1,242</td><td>—</td><td>1</td><td><a class="buy" data-track="offer_click" data-mpn="SLG47105V" data-distributor="Renesas" href="https://octopart.com/search?q=SLG47105V" aria-label="Buy SLG47105V from Renesas">Buy Now</a></td></tr>
+            </tbody>
+          </table>
+          <div class="inv-foot"><span>3 distributors in stock · 5 listed</span><a data-track="part_SLG47105V" href="https://octopart.com/search?q=SLG47105V">Compare All Offers →</a></div>
+        </article>
+        <article class="inv-card" aria-labelledby="mpn-SLG47004V">
+          <div class="inv-head">
+            <svg class="chipico" viewBox="0 0 56 56" aria-hidden="true"><g fill="#568FCA"><rect x="12" y="4" width="4" height="8" rx="1"/><rect x="20" y="4" width="4" height="8" rx="1"/><rect x="28" y="4" width="4" height="8" rx="1"/><rect x="36" y="4" width="4" height="8" rx="1"/><rect x="12" y="44" width="4" height="8" rx="1"/><rect x="20" y="44" width="4" height="8" rx="1"/><rect x="28" y="44" width="4" height="8" rx="1"/><rect x="36" y="44" width="4" height="8" rx="1"/><rect x="4" y="14" width="8" height="4" rx="1"/><rect x="4" y="22" width="8" height="4" rx="1"/><rect x="4" y="30" width="8" height="4" rx="1"/><rect x="4" y="38" width="8" height="4" rx="1"/><rect x="44" y="14" width="8" height="4" rx="1"/><rect x="44" y="22" width="8" height="4" rx="1"/><rect x="44" y="30" width="8" height="4" rx="1"/><rect x="44" y="38" width="8" height="4" rx="1"/></g><rect x="10" y="10" width="36" height="36" rx="5" fill="#285483"/><rect x="15" y="15" width="26" height="26" rx="3" fill="#3671B0"/><circle cx="20" cy="20" r="2" fill="#CEDEF0"/></svg>
+            <div>
+              <h3 class="mpn" id="mpn-SLG47004V">SLG47004V <span class="fam">AnalogPAK</span></h3>
+              <p class="desc">Mixed-signal matrix with in-system programmability and advanced analog features</p>
+            </div>
+          </div>
+          <h4>Distributor Inventory</h4>
+          <table class="inv">
+            <thead><tr><th scope="col">Distributor</th><th scope="col">Stock</th><th scope="col">Packaging</th><th scope="col">Min Qty</th><th scope="col"><span class="sr-only">Buy</span></th></tr></thead>
+            <tbody>
+              <tr><td>Renesas</td><td class="stock">8,091</td><td>—</td><td>1</td><td><a class="buy" data-track="offer_click" data-mpn="SLG47004V" data-distributor="Renesas" href="https://octopart.com/search?q=SLG47004V" aria-label="Buy SLG47004V from Renesas">Buy Now</a></td></tr>
+              <tr><td>Mouser</td><td class="stock">1,722</td><td>Tape &amp; Reel</td><td>1</td><td><a class="buy" data-track="offer_click" data-mpn="SLG47004V" data-distributor="Mouser" href="https://octopart.com/search?q=SLG47004V" aria-label="Buy SLG47004V from Mouser">Buy Now</a></td></tr>
+              <tr><td>Newark</td><td class="stock">627</td><td>Cut Tape</td><td>1</td><td><a class="buy" data-track="offer_click" data-mpn="SLG47004V" data-distributor="Newark" href="https://octopart.com/search?q=SLG47004V" aria-label="Buy SLG47004V from Newark">Buy Now</a></td></tr>
+            </tbody>
+          </table>
+          <div class="inv-foot"><span>3 distributors in stock · 5 listed</span><a data-track="part_SLG47004V" href="https://octopart.com/search?q=SLG47004V">Compare All Offers →</a></div>
+        </article>
+        <article class="inv-card" aria-labelledby="mpn-SLG46537V">
+          <div class="inv-head">
+            <svg class="chipico" viewBox="0 0 56 56" aria-hidden="true"><g fill="#568FCA"><rect x="12" y="4" width="4" height="8" rx="1"/><rect x="20" y="4" width="4" height="8" rx="1"/><rect x="28" y="4" width="4" height="8" rx="1"/><rect x="36" y="4" width="4" height="8" rx="1"/><rect x="12" y="44" width="4" height="8" rx="1"/><rect x="20" y="44" width="4" height="8" rx="1"/><rect x="28" y="44" width="4" height="8" rx="1"/><rect x="36" y="44" width="4" height="8" rx="1"/><rect x="4" y="14" width="8" height="4" rx="1"/><rect x="4" y="22" width="8" height="4" rx="1"/><rect x="4" y="30" width="8" height="4" rx="1"/><rect x="4" y="38" width="8" height="4" rx="1"/><rect x="44" y="14" width="8" height="4" rx="1"/><rect x="44" y="22" width="8" height="4" rx="1"/><rect x="44" y="30" width="8" height="4" rx="1"/><rect x="44" y="38" width="8" height="4" rx="1"/></g><rect x="10" y="10" width="36" height="36" rx="5" fill="#285483"/><rect x="15" y="15" width="26" height="26" rx="3" fill="#3671B0"/><circle cx="20" cy="20" r="2" fill="#CEDEF0"/></svg>
+            <div>
+              <h3 class="mpn" id="mpn-SLG46537V">SLG46537V <span class="fam">GreenPAK</span></h3>
+              <p class="desc">Mixed-signal matrix, 1.8 V to 5 V, STQFN-20 (2 mm × 3 mm)</p>
+            </div>
+          </div>
+          <h4>Distributor Inventory</h4>
+          <table class="inv">
+            <thead><tr><th scope="col">Distributor</th><th scope="col">Stock</th><th scope="col">Packaging</th><th scope="col">Min Qty</th><th scope="col"><span class="sr-only">Buy</span></th></tr></thead>
+            <tbody>
+              <tr><td>Renesas</td><td class="stock">3,795</td><td>—</td><td>1</td><td><a class="buy" data-track="offer_click" data-mpn="SLG46537V" data-distributor="Renesas" href="https://octopart.com/search?q=SLG46537V" aria-label="Buy SLG46537V from Renesas">Buy Now</a></td></tr>
+              <tr><td>DigiKey</td><td class="stock">3,795</td><td>Cut Tape</td><td>1</td><td><a class="buy" data-track="offer_click" data-mpn="SLG46537V" data-distributor="DigiKey" href="https://octopart.com/search?q=SLG46537V" aria-label="Buy SLG46537V from DigiKey">Buy Now</a></td></tr>
+              <tr><td>Mouser</td><td class="stock">2,669</td><td>Tape &amp; Reel</td><td>1</td><td><a class="buy" data-track="offer_click" data-mpn="SLG46537V" data-distributor="Mouser" href="https://octopart.com/search?q=SLG46537V" aria-label="Buy SLG46537V from Mouser">Buy Now</a></td></tr>
+            </tbody>
+          </table>
+          <div class="inv-foot"><span>3 distributors in stock · 5 listed</span><a data-track="part_SLG46537V" href="https://octopart.com/search?q=SLG46537V">Compare All Offers →</a></div>
+        </article>
+        <article class="inv-card" aria-labelledby="mpn-SLG46536V">
+          <div class="inv-head">
+            <svg class="chipico" viewBox="0 0 56 56" aria-hidden="true"><g fill="#568FCA"><rect x="12" y="4" width="4" height="8" rx="1"/><rect x="20" y="4" width="4" height="8" rx="1"/><rect x="28" y="4" width="4" height="8" rx="1"/><rect x="36" y="4" width="4" height="8" rx="1"/><rect x="12" y="44" width="4" height="8" rx="1"/><rect x="20" y="44" width="4" height="8" rx="1"/><rect x="28" y="44" width="4" height="8" rx="1"/><rect x="36" y="44" width="4" height="8" rx="1"/><rect x="4" y="14" width="8" height="4" rx="1"/><rect x="4" y="22" width="8" height="4" rx="1"/><rect x="4" y="30" width="8" height="4" rx="1"/><rect x="4" y="38" width="8" height="4" rx="1"/><rect x="44" y="14" width="8" height="4" rx="1"/><rect x="44" y="22" width="8" height="4" rx="1"/><rect x="44" y="30" width="8" height="4" rx="1"/><rect x="44" y="38" width="8" height="4" rx="1"/></g><rect x="10" y="10" width="36" height="36" rx="5" fill="#285483"/><rect x="15" y="15" width="26" height="26" rx="3" fill="#3671B0"/><circle cx="20" cy="20" r="2" fill="#CEDEF0"/></svg>
+            <div>
+              <h3 class="mpn" id="mpn-SLG46536V">SLG46536V <span class="fam">GreenPAK</span></h3>
+              <p class="desc">Mixed-signal matrix, 1.8 V to 5 V, STQFN-14 (2 mm × 2.2 mm)</p>
+            </div>
+          </div>
+          <h4>Distributor Inventory</h4>
+          <table class="inv">
+            <thead><tr><th scope="col">Distributor</th><th scope="col">Stock</th><th scope="col">Packaging</th><th scope="col">Min Qty</th><th scope="col"><span class="sr-only">Buy</span></th></tr></thead>
+            <tbody>
+              <tr><td>Mouser</td><td class="stock">5,182</td><td>Tape &amp; Reel</td><td>1</td><td><a class="buy" data-track="offer_click" data-mpn="SLG46536V" data-distributor="Mouser" href="https://octopart.com/search?q=SLG46536V" aria-label="Buy SLG46536V from Mouser">Buy Now</a></td></tr>
+              <tr><td>Renesas</td><td class="stock">1,112</td><td>—</td><td>1</td><td><a class="buy" data-track="offer_click" data-mpn="SLG46536V" data-distributor="Renesas" href="https://octopart.com/search?q=SLG46536V" aria-label="Buy SLG46536V from Renesas">Buy Now</a></td></tr>
+              <tr><td>DigiKey</td><td class="stock">1,112</td><td>Cut Tape</td><td>1</td><td><a class="buy" data-track="offer_click" data-mpn="SLG46536V" data-distributor="DigiKey" href="https://octopart.com/search?q=SLG46536V" aria-label="Buy SLG46536V from DigiKey">Buy Now</a></td></tr>
+            </tbody>
+          </table>
+          <div class="inv-foot"><span>3 distributors in stock · 5 listed</span><a data-track="part_SLG46536V" href="https://octopart.com/search?q=SLG46536V">Compare All Offers →</a></div>
+        </article>
+      </div>
+      <div class="inv-note"><span>Stock snapshot from Octopart, 23 October 2026. Authorized distributors with stock shown. Distributor links are sponsored.</span><a data-track="parts_view_all" href="https://octopart.com/search?q=GreenPAK">View All GreenPAK Parts →</a></div>
     </div>
   </section>
 
