@@ -118,14 +118,6 @@
   .card a.more{margin-top:auto;font-weight:700;font-size:14px;text-decoration:none;color:var(--blue-600)}
   .card a.more:hover{text-decoration:underline}
 
-  /* Fit check */
-  .fit{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  .fit-box{border-radius:8px;padding:28px}
-  .fit-yes{background:var(--mint)}
-  .fit-no{background:var(--fill)}
-  .fit-box h3{color:var(--blue-900)}
-  .fit-box ul{margin:16px 0 0;padding-left:20px}
-  .fit-box li{margin:10px 0}
 
   /* Benefits */
   .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 40px}
@@ -179,7 +171,7 @@
   .draft-banner strong{font-weight:700}
   @media (max-width:960px){
     h1{font-size:40px;line-height:44px}
-    .hero .wrap,.ba,.fit,.res,.final .wrap,.video-sec .wrap{grid-template-columns:1fr}
+    .hero .wrap,.ba,.res,.final .wrap,.video-sec .wrap{grid-template-columns:1fr}
     .grid-3,.benefits,.steps{grid-template-columns:1fr 1fr}
     .proof .wrap{grid-template-columns:1fr 1fr}
     .stat{border-left:0;padding-left:0}
@@ -440,36 +432,8 @@
     </div>
   </section>
 
-  <!-- ============ 7. HONEST FIT CHECK ============ -->
-  <section aria-labelledby="check-title">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="check-title">When It's the Right Call — and When It Isn't</h2>
-        <p>GreenPAK pays off when it consolidates several functions. It isn't the answer to every part on your BOM.</p>
-      </div>
-      <div class="fit">
-        <div class="fit-box fit-yes">
-          <h3>Good Fit</h3>
-          <ul>
-            <li>Your board has several small logic, timing, or supervision parts you could merge</li>
-            <li>Board space, part count, or standby current is tight</li>
-            <li>You expect the circuit to change late in the design</li>
-            <li>You want a custom part that's harder to copy off the board</li>
-          </ul>
-        </div>
-        <div class="fit-box fit-no">
-          <h3>Probably Not</h3>
-          <ul>
-            <li>You need one simple gate — a single discrete part is likely cheaper</li>
-            <li>The function needs firmware — GreenPAK is configured hardware, so it sits next to a microcontroller rather than replacing one</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 8. BENEFITS ============ -->
-  <section class="alt" aria-labelledby="benefits-title">
+  <!-- ============ 7. BENEFITS ============ -->
+  <section aria-labelledby="benefits-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="benefits-title">What You Get on the Board</h2>
@@ -485,8 +449,8 @@
     </div>
   </section>
 
-  <!-- ============ 9. PROVEN DESIGNS ============ -->
-  <section aria-labelledby="res-title">
+  <!-- ============ 8. PROVEN DESIGNS ============ -->
+  <section class="alt" aria-labelledby="res-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="res-title">Start from a Proven Design</h2>
@@ -507,8 +471,8 @@
     </div>
   </section>
 
-  <!-- ============ 10. PARTS ON OCTOPART ============ -->
-  <section id="parts" class="alt" aria-labelledby="parts-title">
+  <!-- ============ 9. PARTS ON OCTOPART ============ -->
+  <section id="parts" aria-labelledby="parts-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="parts-title">Compare GreenPAK Parts on Octopart</h2>
@@ -528,7 +492,7 @@
     </div>
   </section>
 
-  <!-- ============ 11. FINAL CTA ============ -->
+  <!-- ============ 10. FINAL CTA ============ -->
   <section class="final" aria-labelledby="final-title">
     <svg class="deco" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="4"><rect x="50" y="50" width="100" height="100" rx="10"/><path d="M70 30v20M90 30v20M110 30v20M130 30v20M70 150v20M90 150v20M110 150v20M130 150v20M30 70h20M30 90h20M30 110h20M30 130h20M150 70h20M150 90h20M150 110h20M150 130h20"/></g></svg>
     <div class="wrap">
