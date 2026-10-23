@@ -455,49 +455,48 @@
     <div class="wrap">
       <div class="section-head">
         <h2 id="fit-title">Start with the Problem You're Solving</h2>
-        <p>Nobody searches for "GreenPAK." You search for a power sequencer, a level shifter, or a way to debounce a button. If your board needs two or more of these, GreenPAK is worth a look.</p>
       </div>
       <div class="grid-3">
         <article class="card">
           <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
-          <div class="fam">GreenPAK · Power GreenPAK</div>
-          <h3>Power Sequencing and Reset</h3>
-          <p>Bring rails up in the right order, hold a processor in reset, and supervise voltages — with LDOs and load switches on some parts.</p>
+          <div class="fam">Replaces: Power Sequencer · Reset IC · Voltage Supervisor</div>
+          <h3>Sequence Power Rails and Supervise Resets</h3>
+          <p>Bring rails up in the right order, hold the processor in reset, and supervise voltages — in one chip instead of several. Some parts add LDOs and load switches.</p>
           <a class="more" data-track="card_power_sequencing" target="_blank" rel="noopener" href="https://www.renesas.com/en/products/programmable-logic/greenpak-programmable-mixed-signal-products/power-greenpak">See Power GreenPAK →</a>
         </article>
         <article class="card">
           <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h7l3 5-3 5H4M14 12h6"/></svg></div>
-          <div class="fam">GreenPAK · Dual Supply GreenPAK</div>
-          <h3>Glue Logic and Level Translation</h3>
-          <p>Replace discrete gates, flip-flops, and counters, and bridge two independent voltage domains in the same chip.</p>
+          <div class="fam">Replaces: Logic Gates · Flip-Flops · Counters · Level Shifter</div>
+          <h3>Replace Glue Logic and Translate Voltage Levels</h3>
+          <p>Swap a row of discrete gates, flip-flops, and counters for one configurable chip, and bridge two independent voltage domains without a separate level shifter.</p>
           <a class="more" data-track="card_glue_logic" target="_blank" rel="noopener" href="https://www.renesas.com/en/products/programmable-logic/greenpak-programmable-mixed-signal-products/dual-supply-greenpak">See Dual Supply GreenPAK →</a>
         </article>
         <article class="card">
           <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></div>
-          <div class="fam">GreenPAK · Asynchronous State Machine</div>
-          <h3>Timing, Delays, and State Machines</h3>
-          <p>Debounce inputs, build delays and PWM, drive LEDs, or run a custom state machine from oscillators, counters, and LUTs.</p>
+          <div class="fam">Replaces: Debounce Circuit · Delay Timer · PWM Generator</div>
+          <h3>Debounce Buttons, Add Delays, and Generate PWM</h3>
+          <p>Clean up noisy inputs, build delays and PWM, drive LEDs, or run a custom state machine — all from the chip's oscillators, counters, and LUTs instead of separate timer and logic parts.</p>
           <a class="more" data-track="card_timing" target="_blank" rel="noopener" href="https://www.renesas.com/en/products/programmable-logic/greenpak-programmable-mixed-signal-products/greenpak-asynchronous-state-machine">See State Machine GreenPAK →</a>
         </article>
         <article class="card">
           <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg></div>
-          <div class="fam">HVPAK</div>
-          <h3>Motor and Load Drive</h3>
-          <p>Combine mixed-signal logic with a high-voltage H-bridge to drive brushed DC motors, steppers, or solenoids from one chip.</p>
+          <div class="fam">Replaces: Motor Driver · Control Logic</div>
+          <h3>Drive a Brushed DC Motor, Stepper, or Solenoid</h3>
+          <p>Put a high-voltage H-bridge and the mixed-signal logic that controls it in one chip, instead of a separate motor driver and controller.</p>
           <a class="more" data-track="card_motor" target="_blank" rel="noopener" href="https://www.renesas.com/en/products/programmable-logic/greenpak-programmable-mixed-signal-products/hvpak">See HVPAK →</a>
         </article>
         <article class="card">
           <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h3l3-8 4 16 3-8h7"/></svg></div>
-          <div class="fam">AnalogPAK</div>
-          <h3>Sensor and Analog Front Ends</h3>
-          <p>Build your own analog circuits next to configurable logic — including a low-power option with a 14-bit SAR ADC.</p>
+          <div class="fam">Replaces: Analog Front End · ADC · Glue Logic</div>
+          <h3>Build a Sensor Interface or Analog Front End</h3>
+          <p>Design your own analog circuit next to configurable logic on the same chip. A low-power option adds a 14-bit SAR ADC for reading sensors.</p>
           <a class="more" data-track="card_analog" target="_blank" rel="noopener" href="https://www.renesas.com/en/products/programmable-logic/greenpak-programmable-mixed-signal-products/analogpak">See AnalogPAK →</a>
         </article>
         <article class="card">
           <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14l-1.5-6h-11zM7 11l2-5h6l2 5"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/></svg></div>
-          <div class="fam">Automotive GreenPAK</div>
-          <h3>Automotive Designs</h3>
-          <p>Integrate many system functions into a single AEC-Q100 qualified IC. Extended-temperature GreenPAK parts run from −40 °C to +125 °C.</p>
+          <div class="fam">Automotive · AEC-Q100 Qualified</div>
+          <h3>Cut Part Count in Automotive Designs</h3>
+          <p>Fold several system functions into one AEC-Q100 qualified IC. Extended-temperature GreenPAK parts run from −40 °C to +125 °C.</p>
           <a class="more" data-track="card_automotive" target="_blank" rel="noopener" href="https://www.renesas.com/en/products/programmable-logic/greenpak-programmable-mixed-signal-products/automotive-greenpak-programmable-mixed-signal-ics">See Automotive GreenPAK →</a>
         </article>
       </div>
