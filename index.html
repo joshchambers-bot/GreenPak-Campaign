@@ -169,6 +169,7 @@
   .res-card .big{font-size:40px;line-height:44px;font-weight:700;color:var(--op-blue);min-width:96px}
 
   /* Parts: distributor inventory cards */
+  @media (min-width:1200px){.one-line{white-space:nowrap}}
   .inv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
   .inv-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:0 4px 16px rgba(24,50,78,.06)}
   .inv-head{display:flex;gap:16px;align-items:flex-start}
@@ -545,8 +546,8 @@
   <section id="parts" aria-labelledby="parts-title">
     <div class="wrap">
       <div class="section-head" style="max-width:none">
-        <h2 id="parts-title">Compare GreenPAK Parts on Octopart</h2>
-        <p>See which distributors have each part in stock before you design it in. Stock updates on each part page.</p>
+        <h2 id="parts-title">GreenPAK Parts: Availability and Packaging Type</h2>
+        <p class="one-line">See which distributors have each part in stock before you design one in. Up-to-date stock details come directly from distributors.</p>
       </div>
       <div class="inv-grid">
         <article class="inv-card" aria-labelledby="mpn-SLG47105V">
