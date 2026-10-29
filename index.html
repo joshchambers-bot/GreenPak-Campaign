@@ -193,6 +193,27 @@
   .inv-note{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:20px;font-size:12px;line-height:16.8px;color:var(--ink-3)}
   .inv-note a{color:var(--blue-600);font-weight:700;text-decoration:none}
 
+  /* Development board */
+  .kit-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:32px;box-shadow:0 4px 16px rgba(24,50,78,.06)}
+  .kit-media{margin:0;background:var(--fill);border:1px solid var(--line);border-radius:8px;padding:24px;display:flex;align-items:center;justify-content:center;min-height:280px}
+  .kit-media img{display:block;width:100%;max-width:520px;height:auto}
+  .kit-body{display:flex;flex-direction:column;justify-content:center}
+  .kit-eyebrow{font-size:12px;line-height:16.8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .kit-body h2{color:var(--blue-900);margin-top:12px}
+  .kit-mpn{align-self:flex-start;margin-top:8px;font:600 15px/21px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.02em;color:var(--link);text-decoration:none}
+  .kit-mpn:hover{text-decoration:underline}
+  .kit-lede{font-size:18px;line-height:25.2px;color:var(--ink-3);margin-top:16px;max-width:560px}
+  .kit-tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+  .kit-tags li{font-size:13px;line-height:18.2px;color:var(--ink-2);background:var(--fill);border-radius:var(--radius);padding:4px 10px}
+  .kit-note{margin-top:20px;background:var(--fill);border-radius:8px;padding:16px 20px;font-size:15px;line-height:21px;color:var(--ink-2)}
+  .kit-note a{display:inline-block;margin-top:8px;font-weight:700;font-size:14px;line-height:19.6px;color:var(--blue-600);text-decoration:none}
+  .kit-note a:hover{text-decoration:underline}
+  .kit-buy{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+  .kit-buy > div{min-width:0}
+  .kit-buy .btn{flex:none}
+  .kit-price{font-size:32px;line-height:35.2px;font-weight:700;color:var(--ink)}
+  .kit-price-note{font-size:12px;line-height:16.8px;color:var(--ink-3);margin-top:4px}
+
   /* Final CTA */
   .final{background:var(--blue-900);color:var(--white);padding:72px 0;position:relative;overflow:hidden}
   .final .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center;position:relative}
@@ -225,12 +246,16 @@
     .stat{border-left:0;padding-left:0}
     .site-header .bar{padding:0 16px}
     .final h2{font-size:32px;line-height:35.2px}
+    .kit-card{grid-template-columns:1fr;gap:24px;padding:24px}
+    .kit-media{min-height:0}
   }
   @media (max-width:620px){
     h1{font-size:32px;line-height:35.2px}
     .grid-3,.benefits,.steps,.proof .wrap{grid-template-columns:1fr}
     .inv th:nth-child(3),.inv td:nth-child(3){display:none}
     .inv-card{padding:18px}
+    .kit-card{padding:18px}
+    .kit-media{padding:16px}
   }
 </style>
 </head>
@@ -424,8 +449,41 @@
     </div>
   </section>
 
+  <!-- ============ 5b. DEVELOPMENT BOARD ============ -->
+  <section class="alt" id="dev-board" aria-labelledby="kit-title">
+    <div class="wrap">
+      <article class="kit-card">
+        <figure class="kit-media">
+          <img src="https://www.renesas.com/sites/default/files/media/images/slg4dvakdv-board-top.png" width="1280" height="720" loading="lazy" decoding="async" alt="GreenPAK Advanced Development Board, top view">
+        </figure>
+        <div class="kit-body">
+          <div class="kit-eyebrow">Development Platform</div>
+          <h2 id="kit-title">GreenPAK Advanced Development Board</h2>
+          <a class="kit-mpn" data-track="devboard_mpn" href="https://octopart.com/search?q=SLG4DVKADV">SLG4DVKADV</a>
+          <p class="kit-lede">Program, emulate, and test GreenPAK designs with a USB development platform and integrated signal and logic generators.</p>
+          <ul class="kit-tags" aria-label="Key features"><li>USB</li><li>Programming &amp; emulation</li><li>Windows · macOS · Linux</li></ul>
+          <div class="kit-note">
+            <p>Use with GreenPAK Designer in Go Configure Software Hub and a device-specific socket kit. Socket adapters are ordered separately.</p>
+            <a data-track="devboard_software" target="_blank" rel="noopener" href="https://www.renesas.com/en/software-tool/go-configure-software-hub">Explore the software<span class="sr-only"> (opens in a new tab)</span></a>
+          </div>
+          <div class="kit-buy">
+            <div>
+              <div class="kit-price">$99.00</div>
+              <div class="kit-price-note">1 unit · Renesas budgetary price</div>
+            </div>
+            <a class="btn btn-primary" data-track="cta_buy_eval_kit" target="_blank" rel="noopener"
+               href="https://www.renesas.com/en/design-resources/boards-kits/slg4dvkadv#parametric_options">
+              Buy Eval Kit
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 5 11M3 6v7h7"/></svg><span class="sr-only"> (opens in a new tab)</span>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- ============ 6. START WITH YOUR PROBLEM ============ -->
-  <section class="alt" aria-labelledby="fit-title">
+  <section aria-labelledby="fit-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="fit-title">Start with the Problem You're Solving</h2>
@@ -478,7 +536,7 @@
   </section>
 
   <!-- ============ 6b. HOW IT WORKS ============ -->
-  <section aria-labelledby="how-title" id="how">
+  <section class="alt" aria-labelledby="how-title" id="how">
     <div class="wrap">
       <div class="section-head">
         <h2 id="how-title">From Idea to Samples in Three Steps</h2>
@@ -499,7 +557,7 @@
   </section>
 
   <!-- ============ 7. BENEFITS ============ -->
-  <section class="alt" aria-labelledby="benefits-title">
+  <section aria-labelledby="benefits-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="benefits-title">What You Get on the Board</h2>
@@ -516,7 +574,7 @@
   </section>
 
   <!-- ============ 8. PROVEN DESIGNS ============ -->
-  <section aria-labelledby="res-title">
+  <section class="alt" aria-labelledby="res-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="res-title">Start from a Proven Design</h2>
@@ -537,7 +595,7 @@
   </section>
 
   <!-- ============ 9. PARTS ON OCTOPART ============ -->
-  <section class="alt" id="parts" aria-labelledby="parts-title">
+  <section id="parts" aria-labelledby="parts-title">
     <div class="wrap">
       <div class="section-head" style="max-width:none">
         <h2 id="parts-title">GreenPAK Parts: Availability and Packaging Type</h2>
